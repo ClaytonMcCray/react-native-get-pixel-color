@@ -20,7 +20,7 @@ export const setImage = (path) => new Promise((resolve, reject) => {
   });
 });
 
-export const resizeImage = (width, height) => new Promize((resolve, reject) => {
+export const resizeImage = (width, height) => new Promise((resolve, reject) => {
 	pixelColor.resizeImage(width, height, (err) => {
 		if (err !== null) {
 			return reject(err);
@@ -42,4 +42,5 @@ export const pickColorAt = (x, y) => new Promise((resolve, reject) => {
 export default {
   setImage,
   pickColorAt,
+  resizeImage,
 };

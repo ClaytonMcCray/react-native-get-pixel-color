@@ -74,7 +74,7 @@ public class GetPixelColorModule extends ReactContextBaseJavaModule {
                 }
             }
 
-            callback.invoke(null, int(100 * double(pixelCount) / adult_front_right_arm_xcoord.length));
+            callback.invoke(null, (int) (100 * (double) pixelCount / adult_front_right_arm_xcoord.length));
         } catch (Exception e) {
             callback.invoke(e.getMessage());
         }

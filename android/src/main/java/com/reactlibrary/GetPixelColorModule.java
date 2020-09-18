@@ -40,6 +40,16 @@ public class GetPixelColorModule extends ReactContextBaseJavaModule {
         callback.invoke(e.getMessage());
       }
     }
+    
+    @ReactMethod
+    public void resizeImage(int x, int y, Callback callback) {
+      try {
+	this.bitmap = Bitmap.createScaledBitmap(this.bitmap, x, y, false);
+        callback.invoke(null);
+      } catch (Exception e) {
+        callback.invoke(e.getMessage());
+      }
+    }
 
     @ReactMethod
     public void getRGB(int x, int y, Callback callback) {

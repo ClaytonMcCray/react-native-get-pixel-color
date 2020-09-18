@@ -44,7 +44,11 @@ public class GetPixelColorModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void resizeImage(int x, int y, Callback callback) {
       try {
-	this.bitmap = Bitmap.createScaledBitmap(this.bitmap, x, y, false);
+        if (this.bitmap == null) {
+            throw new Exception("error in resizeImage: this.bitmap is null");
+        }
+
+        this.bitmap = Bitmap.createScaledBitmap(this.bitmap, x, y, true);
         callback.invoke(null);
       } catch (Exception e) {
         callback.invoke(e.getMessage());

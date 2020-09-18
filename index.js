@@ -21,13 +21,13 @@ export const setImage = (path) => new Promise((resolve, reject) => {
 });
 
 export const resizeImage = (width, height) => new Promise((resolve, reject) => {
-	pixelColor.resizeImage(width, height, (err) => {
-		if (err !== null) {
-			return reject(err);
-		}
+  pixelColor.resizeImage(width, height, (err) => {
+    if (err !== null) {
+      return reject(err);
+    }
 
-		resolve('Image succesfully resized');
-	});
+    resolve('Image succesfully resized');
+  });
 });
 
 export const pickColorAt = (x, y) => new Promise((resolve, reject) => {

@@ -60,8 +60,8 @@ public class GetPixelColorModule extends ReactContextBaseJavaModule {
         int pixelCount = 0;
 
         try {
-            for (int x : adult_front_right_arm_xcoord) {
-                for (int y : adult_front_left_arm_ycoord) {
+            for (int x : adult_front_right_arm.adult_front_right_arm_xcoord) {
+                for (int y : adult_front_right_arm.adult_front_left_arm_ycoord) {
                     final int pixel = this.bitmap.getPixel(x, y);
 
                     final int r = Color.red(pixel);

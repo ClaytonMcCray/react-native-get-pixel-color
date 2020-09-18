@@ -22,7 +22,7 @@ For iOS you should pass the path to the file, however for Android you should pas
 import GetPixelColor from 'react-native-get-pixel-color';
 
 // upload image
-GetPixelColor.init(pathToFile)
+GetPixelColor.setImage(pathToFile)
   .then(() => {
     // your callback if needed
   })

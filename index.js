@@ -39,19 +39,8 @@ export const pickColorAt = (x, y) => new Promise((resolve, reject) => {
   });
 });
 
-export const calculateFrontRightArm = (red, green, blue) => new Promise((resolve, reject) => {
-  pixelColor.calculateFrontRightArm(red, green, blue, (err, percent) => {
-    if (err !== null) {
-      return reject(err);
-    }
-
-    resolve(percent);
-  });
-});
-
 export default {
   setImage,
   pickColorAt,
   resizeImage,
-  calculateFrontRightArm,
 };

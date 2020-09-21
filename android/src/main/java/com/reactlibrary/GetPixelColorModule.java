@@ -56,31 +56,6 @@ public class GetPixelColorModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void calculateFrontRightArm(int red, int green, int blue, Callback callback) {
-        int pixelCount = 0;
-
-        try {
-            for (int x : adult_front_right_arm.adult_front_right_arm_xcoord) {
-                for (int y : adult_front_right_arm.adult_front_right_arm_ycoord) {
-                    final int pixel = this.bitmap.getPixel(x, y);
-
-                    final int r = Color.red(pixel);
-                    final int g = Color.green(pixel);
-                    final int b = Color.blue(pixel);
-
-                    if (r == red && g == green && b == blue) {
-                        pixelCount++;
-                    }
-                }
-            }
-
-            callback.invoke(null, (int) (100 * (double) pixelCount / adult_front_right_arm.adult_front_right_arm_xcoord.length));
-        } catch (Exception e) {
-            callback.invoke(e.getMessage());
-        }
-    }
-
-    @ReactMethod
     public void getRGB(int x, int y, Callback callback) {
       try {
         final int pixel = this.bitmap.getPixel(x, y);
